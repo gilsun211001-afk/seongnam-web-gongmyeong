@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>성남 웹 공명 스튜디오 | 소상공인의 일을 줄이는 도우미</title>
+  <meta name="description" content="소상공인의 홍보, 문의, 예약, 견적 같은 반복 업무를 AI와 웹도구로 줄이는 도우미입니다.">
+  <style>
+    :root{--ink:#173966;--paper:#fcfcf8;--mint:#d7f2e5;--sun:#f2ca52;--text:#20242a;--line:#cdd5d7;--soft:#edf1f2;font-family:"Noto Sans KR","Malgun Gothic",sans-serif;color:var(--text);background:var(--paper)}*{box-sizing:border-box}body{margin:0}a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:2px solid var(--ink)}.brand{font-weight:800;text-decoration:none}.top nav{display:flex;gap:20px}.top nav a{text-decoration:none}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;padding:72px 0 64px}.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.05;letter-spacing:-.055em;margin:0 0 24px;max-width:720px}.hero p{font-size:18px;line-height:1.75;max-width:620px}.workbench{background:var(--mint);border-left:12px solid var(--ink);padding:28px}.workbench h2{margin-top:0;font-size:21px}.choices{display:grid;gap:8px}.choice{font:inherit;text-align:left;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:13px 15px;cursor:pointer}.choice[aria-pressed="true"]{background:var(--ink);color:white}.recommendation{min-height:124px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(23,57,102,.35);line-height:1.6}.recommendation strong{display:block;margin-bottom:6px}.section{padding:64px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:260px 1fr;gap:40px;margin-bottom:38px}.section h2{font-size:30px;line-height:1.25;margin:0}.section-head p{margin:0;line-height:1.75;max-width:650px}.tool-list{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}.tool{padding:28px 20px 30px 0;border-bottom:1px solid var(--line)}.tool:nth-child(even){padding-left:28px;border-left:1px solid var(--line)}.tool h3{font-size:22px;margin:0 0 10px}.tool p{line-height:1.7;min-height:58px}.link{display:inline-block;background:var(--ink);color:white;text-decoration:none;padding:11px 15px;font-weight:700}.portfolio{display:grid;grid-template-columns:2fr 1fr;gap:28px;align-items:stretch}.portfolio-main{background:var(--ink);color:white;padding:36px}.portfolio-main h3{font-size:28px;margin-top:0}.portfolio-main p{line-height:1.8}.portfolio-main .link{background:var(--sun);color:var(--text)}.proof{border:1px solid var(--ink);padding:28px}.proof strong{display:block;font-size:38px;color:var(--ink);margin-bottom:10px}.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}.step{padding:24px 18px 24px 0;border-bottom:1px solid var(--line)}.step+.step{padding-left:20px;border-left:1px solid var(--line)}.step b{display:block;color:var(--ink);margin-bottom:10px}.step p{line-height:1.6;margin:0}.contact{display:flex;justify-content:space-between;align-items:center;gap:28px;background:var(--sun);padding:36px}.contact h2{margin:0 0 8px}.contact p{margin:0;line-height:1.6}.contact .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.contact .link{white-space:nowrap}footer{padding:30px 0 50px;color:#626970}.choice:focus-visible,.link:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}@media(max-width:760px){.top nav{display:none}.hero,.section-head,.portfolio{grid-template-columns:1fr}.hero{padding-top:48px;gap:30px}.tool-list,.steps{grid-template-columns:1fr}.tool:nth-child(even),.step+.step{padding-left:0;border-left:0}.tool p{min-height:0}.contact{align-items:flex-start;flex-direction:column}.contact .actions{width:100%}.contact .link{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="#top">성남 웹 공명 스튜디오</a>
+    <nav aria-label="주요 메뉴"><a href="#tools">직접 써보기</a><a href="#portfolio">제작 화면</a><a href="#contact">문의하기</a></nav>
+  </header>
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <h1>소상공인의 일을 줄이는 도우미</h1>
+        <p>홍보글을 매번 새로 쓰고, 흩어진 문의를 옮겨 적고, 같은 설명을 되풀이한다면 작은 웹도구 하나로 일을 줄일 수 있습니다. 필요한 경우 홈페이지와 앱까지 한 흐름으로 연결합니다.</p>
+      </div>
+      <aside class="workbench" aria-labelledby="work-title">
+        <h2 id="work-title">지금 가장 줄이고 싶은 일은 무엇인가요?</h2>
+        <div class="choices" id="choices"></div>
+        <div class="recommendation" id="recommendation" aria-live="polite"></div>
+      </aside>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="wrap">
+        <div class="section-head"><h2>설명보다 먼저 써볼 수 있습니다</h2><p>현재 두 가지 로컬 데모가 준비되어 있습니다. 실제 고객 성과 사례가 아니라, 어떤 문제를 어떤 방식으로 정리할 수 있는지 보여주는 작동 예시입니다.</p></div>
+        <div class="tool-list">
+          <article class="tool"><h3>홍보글 초안 도우미</h3><p>업종과 서비스 특징을 입력해 블로그와 인스타그램용 초안을 만듭니다.</p><a class="link" href="../tools/promo-draft-generator/index.html">홍보글 초안 만들기</a></article>
+          <article class="tool"><h3>AI 업무진단 준비</h3><p>반복 업무와 불편을 정리해 상담 전에 확인할 요약과 자동화 후보를 만듭니다.</p><a class="link" href="../tools/business-diagnostic/index.html">내 업무 정리하기</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="wrap">
+        <div class="section-head"><h2>업종에 맞는 화면도 함께 만듭니다</h2><p>카페, 식당, 네일숍, 미용실, 수업, 필라테스, 공방의 화면 구성을 직접 확인할 수 있습니다.</p></div>
+        <div class="portfolio">
+          <div class="portfolio-main"><h3>홈페이지 시안 모음</h3><p>같은 틀에 업종명만 바꾸지 않고, 고객이 먼저 찾는 정보의 순서에 맞춰 구성한 작동 가능한 데모입니다.</p><a class="link" href="https://homepage-demo-links.vercel.app/" target="_blank" rel="noopener noreferrer">7개 시안 확인하기</a></div>
+          <div class="proof"><strong>7개</strong><span>현재 확인할 수 있는 업종별 홈페이지 시안</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>작게 확인하고 필요한 만큼 넓힙니다</h2><p>큰 시스템부터 권하지 않습니다. 반복되는 일 하나를 고르고 실제 흐름에서 작동하는지 확인합니다.</p></div>
+        <div class="steps">
+          <div class="step"><b>문제 확인</b><p>시간이 오래 걸리거나 자주 빠지는 일을 찾습니다.</p></div>
+          <div class="step"><b>작은 도구</b><p>입력과 결과가 명확한 최소 기능을 만듭니다.</p></div>
+          <div class="step"><b>현장 확인</b><p>실제 업무에서 쓸 수 있는지 함께 확인합니다.</p></div>
+          <div class="step"><b>필요할 때 확장</b><p>앱, 홈페이지, 고객관리 흐름으로 연결합니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap contact" id="contact">
+      <div><h2>무엇부터 줄여야 할지 함께 정리합니다</h2><p>먼저 업무진단을 해도 되고, 성남 웹 공명 스튜디오 인스타그램으로 바로 문의해도 됩니다.</p></div>
+      <div class="actions"><a class="link" href="../tools/business-diagnostic/index.html">업무진단 시작하기</a><a class="link" href="https://www.instagram.com/seongnam_web1/" target="_blank" rel="noopener noreferrer">인스타그램으로 바로 문의</a></div>
+    </section>
+  </main>
+  <footer class="wrap">성남 웹 공명 스튜디오가 소상공인의 반복 업무를 AI와 웹도구로 줄입니다.</footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
